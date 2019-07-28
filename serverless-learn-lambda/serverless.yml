@@ -1,0 +1,24 @@
+service: serverless-learn-lambda
+
+provider:
+  name: aws
+  runtime: python3.6
+  region: us-west-2
+  stage: dev  
+  role: arn:aws:iam::908566381001:role/serverless-lambda
+
+functions:
+  myCron:
+    handler: handler.run
+    events:
+      - schedule: rate(1 hour)
+    layers:
+      - arn:aws:lambda:us-west-2:908566381001:layer:my-python-layer:4
+
+package:
+  exclude:
+    - __pycache__/**
+    - "*.ipynb"
+    - .ipynb_checkpoints/**
+    - "*.md"
+    - venv/**
