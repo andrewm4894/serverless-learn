@@ -5,7 +5,7 @@ provider:
   runtime: python3.6
   region: us-west-2
   stage: dev  
-  role: arn:aws:iam::908566381001:role/serverless-lambda
+  role: arn:aws:iam::XXX:role/serverless-lambda
 
 functions:
   myCron:
@@ -13,7 +13,7 @@ functions:
     events:
       - schedule: rate(1 hour)
     layers:
-      - arn:aws:lambda:us-west-2:908566381001:layer:my-aws-python-packages:1
+      - arn:aws:lambda:us-west-2:XXX:layer:my-aws-python-packages:1
 
 package:
   exclude:
