@@ -1,7 +1,4 @@
-import datetime
-import logging
 import json
-from ftplib import FTP
 from my_utils.os_utils import subprocess_execute
 from my_dev.dev import hello_world
 import pandas as pd
